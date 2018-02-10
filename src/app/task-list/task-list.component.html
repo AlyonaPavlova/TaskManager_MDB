@@ -1,0 +1,26 @@
+<div
+  class=" container list-group-item flex-column align-items-start"
+  [ngClass]="{
+    'list-group-item-danger': item.done
+  }">
+
+  <div class="d-flex w-100 justify-content-between row">
+    <h5 class="col-md-10" id="task-text">{{item.task}}</h5>
+    <button
+      (click)="oneDone()"
+      type="button"
+      class="btn col-md-1 button-list"
+    >{{item.done ? 'Cancel' : 'Done'}}</button>
+    <button
+      (click)="oneDelete()"
+      type="button"
+      class="btn col-md-1 button-list"
+    >Delete</button>
+  </div>
+
+  <div class="d-flex w-100 justify-content-between row">
+    <p class="col-md-8">{{item.description}}</p>
+    <small>{{item.date}}</small>
+  </div>
+</div>
+

@@ -1,0 +1,69 @@
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-pink scrolling-navbar"
+            [containerInside]="false">
+  <logo>
+    <a class="logo navbar-brand" href="#"><strong>DO IT</strong></a>
+  </logo>
+  <links>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active waves-light" mdbRippleRadius>
+        <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link">Features</a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link">Pricing</a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link">Opinions</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav nav-flex-icons">
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link"><i class="fa fa-facebook"></i></a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link"><i class="fa fa-twitter"></i></a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link"><i class="fa fa-instagram"></i></a>
+      </li>
+    </ul>
+  </links>
+</mdb-navbar>
+
+<section onload="onStart()">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 offset-md-9">
+            <div class="md-form input-group">
+              <input [(ngModel)]="filterAddTask" type="search" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn waves-light" id="btn-search" type="button" mdbRippleRadius>Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="container py-5">
+            <app-task-form
+              (addTask)="onAdd($event)"
+            ></app-task-form>
+            <div class="list-group">
+              <app-task-list
+                (deleteTask)="onDelete($event)"
+                [item] = "i"
+                *ngFor="let i of items| orderBy: key: reverse | filter:filterAddTask"
+              ></app-task-list>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

@@ -1,0 +1,16 @@
+<div class="form-group container row" id="add-form" onload="onStart()">
+  <button
+    type="button"
+    (click)="onAdd()"
+    class="btn col-md-1"
+    id="button-add"
+  ><b>Add</b></button>
+
+  <input
+    type="text"
+    class="form-control col-md-11"
+    id="task-input"
+    (keyup.enter)="onAdd()"
+    [(ngModel)]="taskEnter"
+    placeholder="Enter a task">
+</div>
