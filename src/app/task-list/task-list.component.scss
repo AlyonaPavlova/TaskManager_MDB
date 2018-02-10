@@ -1,16 +1,12 @@
 .list-group-item-danger {
   background-color: #cef2c5;
   color: #515d4b;
-  opacity: 0.6;
 }
 .list-group-item {
   opacity: 0.6;
-
 }
 
 .button-list {
-  background-color: #4d5888;
-  color: #f7ecff;
   padding: 7px 0 7px 0;
   margin: 0;
   border: 0;
@@ -18,4 +14,8 @@
 
 #task-text {
   padding-right: 0;
+}
+
+.btn-color {
+  background-color: #ec407a;
 }

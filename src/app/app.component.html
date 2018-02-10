@@ -1,7 +1,7 @@
 <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-pink scrolling-navbar"
             [containerInside]="false">
   <logo>
-    <a class="logo navbar-brand" href="#"><strong>DO IT</strong></a>
+    <a class="logo navbar-brand" href="#"><strong>TO DO</strong></a>
   </logo>
   <links>
     <ul class="navbar-nav mr-auto">
@@ -39,24 +39,30 @@
         <div class="row">
           <div class="col-md-3 offset-md-9">
             <div class="md-form input-group">
-              <input [(ngModel)]="filterAddTask" type="search" class="form-control" placeholder="Search for...">
+              <input [(ngModel)]="filterAddTask" type="search" class="form-control" placeholder="  Search for...">
               <span class="input-group-btn">
-                <button class="btn waves-light" id="btn-search" type="button" mdbRippleRadius>Go!</button>
+                <button class="btn waves-light btn-color" type="button" mdbRippleRadius>Go!</button>
               </span>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="container py-5">
-            <app-task-form
-              (addTask)="onAdd($event)"
-            ></app-task-form>
-            <div class="list-group">
-              <app-task-list
-                (deleteTask)="onDelete($event)"
-                [item] = "i"
-                *ngFor="let i of items| orderBy: key: reverse | filter:filterAddTask"
-              ></app-task-list>
+          <div class="col-md-12">
+            <div class="container">
+              <app-task-form
+                (addTask)="onAdd($event)"
+              ></app-task-form>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="list-group">
+                    <app-task-list
+                      (deleteTask)="onDelete($event)"
+                      [item] = "i"
+                      *ngFor="let i of items| orderBy: key: reverse | filter:filterAddTask"
+                    ></app-task-list>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

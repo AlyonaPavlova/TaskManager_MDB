@@ -1,16 +1,15 @@
-<div class="form-group container row" id="add-form" onload="onStart()">
-  <button
-    type="button"
-    (click)="onAdd()"
-    class="btn col-md-1"
-    id="button-add"
-  ><b>Add</b></button>
-
-  <input
-    type="text"
-    class="form-control col-md-11"
-    id="task-input"
-    (keyup.enter)="onAdd()"
-    [(ngModel)]="taskEnter"
-    placeholder="Enter a task">
+<div class="row mb-5">
+  <div class="col-md-12">
+    <div class="form-group container-fluid p-0" onload="onStart()">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn waves-light ml-0 mr-2 btn-color" type="button" (click)="onAdd()" mdbRippleRadius><b>Add</b></button>
+        </span>
+        <input [(ngModel)]="taskEnter" type="text" class="form-control" placeholder="  Enter a task"
+               (keyup.enter)="onAdd()">
+      </div>
+    </div>
+  </div>
 </div>
+
+
